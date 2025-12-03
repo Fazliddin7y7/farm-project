@@ -1,17 +1,16 @@
+import React from "react";
+import "./App.css";
 
-import './App.css'
-
-//components
-import Home1 from "./pages/home/Home1";
+// Routes
+import { BrowserRouter } from "react-router-dom";
+import MainRoutes from "./routes/MainRoutes";
 
 function App() {
-
   return (
-    <>
-    <Home1 />
-
-    </>
-  )
+    <BrowserRouter>
+      <MainRoutes />
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
