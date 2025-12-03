@@ -1,10 +1,15 @@
 import React from "react";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 
 export default function Home1() {
     return (
         <>
-        <h1>hom1</h1>
+        <Header></Header>
+        {/* <Footer></Footer> */}
+
+        
         </>
     )
 }
