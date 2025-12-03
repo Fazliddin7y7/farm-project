@@ -13,4 +13,5 @@ html, body, #root {
 
 body {
   max-width: 1500px;
+  background-image: url(../src/pages/home/home1Png/mainImage.png);
 }
