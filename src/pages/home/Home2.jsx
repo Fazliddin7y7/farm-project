@@ -1,7 +1,8 @@
 import React from "react";
-
+import styled from "styled-components";
+import Header from "../../components/Header";
 export default function Home2() {
     return <>
-    <h1>home2</h1>
+    <Header/>
     </>
 }
