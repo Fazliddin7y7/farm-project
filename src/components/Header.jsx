@@ -1,37 +1,42 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Logoo from "../pages/home/home1Png/logo.png";
-import LinkPng from "../pages/home/home1Png/Link.png"
-import Search from "../pages/home/home1Png/Search.png"
+import LinkPng from "../pages/home/home1Png/Link.png";
+import Search from "../pages/home/home1Png/Search.png";
 
 const HeaderContainer = styled.header`
   width: 100%;
-  padding: 20px 40px;
+  height: 90px;
+  padding: 0 40px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   position: fixed;
+  gap: 40px;
+  background: transparent;
   top: 0;
   z-index: 1000;
 `;
 
-const Logo = styled.img`
-  width: 139px;
-  height: 45px;
-  align-self:center;
-  margin-bottom:40px;
-  top:47px;
-  left:87.94px;
-  border-radius:3px;
-
+const LeftSide = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 60px;
 `;
 
+const Logo = styled.img`
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
+`;
 
 const Nav = styled.nav`
   display: flex;
-  margin-left: 80px;
-  gap: 40px;
+  align-items: center;
+  gap: 35px;
 
-  @media (max-width: 830px) {
+  @media (max-width: 900px) {
     display: none;
   }
 `;
@@ -41,22 +46,20 @@ const NavGroup = styled.div`
 `;
 
 const NavItem = styled.div`
-  font-size: 15px;
-  color:white;
+  font-size: 16px;
+  color: white;
   cursor: pointer;
   font-weight: 600;
+  font-family: "Signika", sans-serif;
   position: relative;
-   font-family: "Signika", sans-serif;
-  padding: 0 18px;
-
-  color:rgba(255, 255, 255, 1);
 
   &::after {
     content: "•";
     position: absolute;
-    right: -20px;
-    font-size: 24px;
-    align-self: center;
+    right: -18px;
+    top: 0;
+    transform: translateY(-2px);
+    font-size: 22px;
     color: #f5d142;
   }
 
@@ -71,7 +74,7 @@ const NavItem = styled.div`
 
 const Dropdown = styled.div`
   position: absolute;
-  top: 20px;
+  top: 30px;
   left: -20px;
   width: 220px;
   background: #ffffff;
@@ -80,7 +83,7 @@ const Dropdown = styled.div`
   display: ${({ open }) => (open ? "flex" : "none")};
   flex-direction: column;
   gap: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   border: 1px solid #eaeaea;
   z-index: 2000;
 `;
@@ -97,15 +100,32 @@ const DropItem = styled.div`
   }
 `;
 
+const RightSide = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+
+const Icon = styled.img`
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  cursor: pointer;
+`;
+
 const Burger = styled.div`
-  width: 80px;
-  height: 25px;
+  width: 35px;
+  height: 22px;
   display: none;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
 
-  @media (max-width: 830px) {
+  @media (max-width: 900px) {
     display: flex;
   }
 `;
@@ -113,7 +133,7 @@ const Burger = styled.div`
 const Line = styled.div`
   width: 100%;
   height: 3px;
-  background: #111;
+  background: #fff;
   transition: 0.3s;
 `;
 
@@ -130,8 +150,8 @@ const MobileMenu = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
-  z-index: 999;
-  box-shadow: -2px 0 20px rgba(0,0,0,0.12);
+  z-index: 1100;
+  box-shadow: -2px 0 20px rgba(0, 0, 0, 0.12);
 `;
 
 const MobileItem = styled.div`
@@ -141,29 +161,7 @@ const MobileItem = styled.div`
   font-weight: 500;
 `;
 
-
-const LinkPngg = styled.img`
-  width: 139px;
-  height: 43;
-  align-self:center;
-  margin-left:200px;
-  margin-bottom:10px;
-  top:47px;
-  left:87.94px;
-  border-radius:3px;
-`
-;
-
-const SearchImg = styled.img`
-    width:48;
-    height:48;
-    top:26px;
-    border-radius:24px;
-    align-self:center;
-    
-`;
-
-
+// ================================
 
 export default function Header() {
   const [dropOpen, setDropOpen] = useState(false);
@@ -172,37 +170,43 @@ export default function Header() {
   return (
     <>
       <HeaderContainer>
-        <Logo src={Logoo} />
 
-        <Nav>
-          <NavGroup
-            onMouseEnter={() => setDropOpen(true)}
-            onMouseLeave={() => setDropOpen(false)}
-          >
-            <NavItem style={{color:"rgba(237, 221, 94, 1)"}}>HOME</NavItem>
+        <LeftSide>
+          <Logo src={Logoo} />
 
-            <Dropdown open={dropOpen}>
-              <DropItem>HOME 1</DropItem>
-              <DropItem>HOME 2</DropItem>
-              <DropItem>HOME 3</DropItem>
-            </Dropdown>
-          </NavGroup>
+          <Nav>
+            <NavGroup
+              onMouseEnter={() => setDropOpen(true)}
+              onMouseLeave={() => setDropOpen(false)}
+            >
+              <NavItem style={{ color: "rgba(237, 221, 94, 1)" }}>HOME</NavItem>
 
-          <NavItem>PAGES</NavItem>
-          <NavItem>SERVICES</NavItem>
-          <NavItem>PORTFOLIO</NavItem>
-          <NavItem>BLOG</NavItem>
-          <NavItem>CONTACT US</NavItem>
+              <Dropdown open={dropOpen}>
+                <DropItem>HOME 1</DropItem>
+                <DropItem>HOME 2</DropItem>
+                <DropItem>HOME 3</DropItem>
+              </Dropdown>
+            </NavGroup>
 
-          <LinkPngg src={LinkPng}/>
-          <SearchImg src={Search}/>
+            <NavItem>PAGES</NavItem>
+            <NavItem>SERVICES</NavItem>
+            <NavItem>PORTFOLIO</NavItem>
+            <NavItem>BLOG</NavItem>
+            <NavItem>CONTACT US</NavItem>
+          </Nav>
+        </LeftSide>
 
-        </Nav>
+        <RightSide>
+          <Icon src={LinkPng} />
+          <Icon src={Search} />
+        </RightSide>
 
         <Burger onClick={() => setOpen(!open)}>
           <Line style={{ transform: open ? "rotate(45deg)" : "rotate(0)" }} />
           <Line style={{ opacity: open ? "0" : "1" }} />
-          <Line style={{ transform: open ? "rotate(-45deg)" : "rotate(0)" }} />
+          <Line
+            style={{ transform: open ? "rotate(-45deg)" : "rotate(0)" }}
+          />
         </Burger>
       </HeaderContainer>
 
