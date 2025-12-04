@@ -70,7 +70,6 @@ const AboutCtn = styled.div`
   }
 `;
 
-// CurrentlyCtn - Responsive qilish
 const CurrentlyCtn = styled.div`
   width: 100%;
   min-height: 500px;
