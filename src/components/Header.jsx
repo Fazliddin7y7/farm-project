@@ -67,7 +67,7 @@ const Dropdown = styled.div`
   width: 220px;
   background: white;
   border-radius: 16px;
-  padding: 25px 20px;
+  padding: 25px 21px;
   display: none;
   flex-direction: column;
   gap: 18px;
