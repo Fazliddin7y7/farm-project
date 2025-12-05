@@ -11,6 +11,8 @@ import About from "../pages/pages/AboutUs";
 import OurHistory from "../pages/pages/OurHistory";
 import Team from "../pages/pages/OurTeamMember";
 import Faq from "../pages/pages/FAQ";
+import Services from "../pages/services/Services";
+
 
 
 
@@ -28,6 +30,8 @@ const MainRoutes = () => {
      <Route path={ROUTES.HISTORY} element={<OurHistory />} />;
      <Route path={ROUTES.TEAM} element={<Team />} />;
      <Route path={ROUTES.FAQ} element={<Faq />} />;
+     <Route path={ROUTES.SERVICES} element={<Services />} />;
+
 
 
 

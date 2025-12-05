@@ -6,6 +6,7 @@ const ROUTES = {
     HISTORY: "/ourhistory",
     TEAM: "/team",
     FAQ: "/faq",
+    SERVICES: "/services",
 
    
 

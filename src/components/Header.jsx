@@ -364,7 +364,6 @@ export default function Header() {
         { to: ROUTES.FAQ, label: "FAQ" },
         { to: ROUTES.HISTORY, label: "Our History" },
         { to: ROUTES.TEAM, label: "Our Team" },
-        { to: ROUTES.TEAM_DETAILS, label: "Team Member Details" }
       ],
       isActive: location.pathname.match(/about|faq|history|team/)
     },
