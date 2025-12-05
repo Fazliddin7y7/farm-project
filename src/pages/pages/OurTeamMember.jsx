@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-
 //components
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -18,18 +17,14 @@ import Mark from "./teamPng/mark.png";
 import Paula from "./teamPng/paula.png";
 import Section from "./teamPng/section.png";
 
-
-
-
 const TeamCtn = styled.div`
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
   background: linear-gradient(180deg, #f8fff8 0%, #ffffff 100%);
-  gap: 50px;
+  padding-top: 80px;
 
   img {
     width: 100%;
@@ -38,127 +33,212 @@ const TeamCtn = styled.div`
     -webkit-user-drag: none;
     user-select: none;
     pointer-events: none;
+    display: block;
   }
 
+  @media (max-width: 768px) {
+    padding-top: 70px;
+  }
+`;
+
+const ContentWrapper = styled.div`
+  width: 100%;
+  max-width: 1400px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+
+  @media (max-width: 768px) {
+    padding: 30px 15px;
+    gap: 40px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px 10px;
+    gap: 30px;
+  }
 `;
 
 const CardsCtn = styled.div`
-width: 100%;
-height: 900px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-gap: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 `;
 
-const Cards2Ctn = styled.div`
-width: 100%;
-height: 400px;
-display: flex;
-align-items: center;
-justify-content: space-evenly;
+const CardsRow = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  justify-items: center;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
 `;
 
 const Card = styled.div`
-width: 300px;
-height: 400px;
-display: flex;
-flex-direction: column;
-gap: 10px;
-p {
-    font-weight: 50;
-}
-h1 {
+  width: 100%;
+  max-width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  }
+
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  p {
+    font-size: 16px;
+    color: #4a8c3e;
     font-weight: 500;
-    font-size: 25px;
-}
-img {
-    width: 250px;
+    margin: 0;
+    text-align: center;
+  }
 
-}
+  h1 {
+    font-size: 22px;
+    color: #2d5a27;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+  }
 
+  @media (max-width: 1200px) {
+    max-width: 280px;
+    height: 380px;
+    
+    img {
+      height: 230px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    max-width: 100%;
+    height: auto;
+    padding: 15px;
+    
+    img {
+      height: 200px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    max-width: 320px;
+    height: auto;
+    
+    img {
+      height: 220px;
+    }
+  }
 `;
+
+const SectionImage = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 40px;
+  
+  img {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 30px;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 20px;
+  }
+`;
+
 export default function OurTeamMember() {
+    const firstRow = [
+        { img: Jacob, position: "Ceo Owner", name: "Jacob Mersin" },
+        { img: Clara, position: "Supervisor", name: "Clara Henry" },
+        { img: Paula, position: "Manager", name: "Paula Den" },
+        { img: Carla, position: "Marketing", name: "Carla Hall" }
+    ];
+
+    const secondRow = [
+        { img: Mark, position: "Sales Manager", name: "Mark Donald" },
+        { img: Jamie, position: "Garden Experts", name: "Jamie Oliver" },
+        { img: Alice, position: "Senior Manager", name: "Alice Waters" },
+        { img: Julia, position: "Senior Worker", name: "Julia Taylor" }
+    ];
+
     return (
         <>
             <Header />
             <TeamCtn>
-                <img src={BackgroundImg} alt="" />
+                <img src={BackgroundImg} alt="Team background" />
 
-                <CardsCtn>
-                    <Cards2Ctn>
-                        <Card>
-                            <img src={Jacob} alt="" />
-                            <p>Ceo Owner</p>
-                            <h1>Jacob Mersin</h1>
+                <ContentWrapper>
+                    <CardsCtn>
+                        <CardsRow>
+                            {firstRow.map((member, index) => (
+                                <Card key={index}>
+                                    <img src={member.img} alt={member.name} />
+                                    <p>{member.position}</p>
+                                    <h1>{member.name}</h1>
+                                </Card>
+                            ))}
+                        </CardsRow>
 
-                        </Card>
+                        <CardsRow>
+                            {secondRow.map((member, index) => (
+                                <Card key={index}>
+                                    <img src={member.img} alt={member.name} />
+                                    <p>{member.position}</p>
+                                    <h1>{member.name}</h1>
+                                </Card>
+                            ))}
+                        </CardsRow>
 
-                        <Card>
-                            <img src={Clara} alt="" />
-                            <p>Supervisor</p>
-                            <h1>Clara Henry</h1>
-
-                        </Card>
-
-                        <Card>
-                            <img src={Paula} alt="" />
-                            <p>Manager</p>
-                            <h1>Paula Den</h1>
-
-                        </Card>
-
-                        <Card>
-                            <img src={Carla} alt="" />
-                            <p>Marketing</p>
-                            <h1>Carla Hall</h1>
-
-                        </Card>
-
-                    </Cards2Ctn>
-                    <Cards2Ctn>
-                        <Card>
-                            <img src={Mark} alt="" />
-                            <p>Sales Manager</p>
-                            <h1>Mark Donald</h1>
-
-                        </Card>
-
-                        <Card>
-                            <img src={Jamie} alt="" />
-                            <p>Garden Experts</p>
-                            <h1>Jamie Oliver</h1>
-
-                        </Card>
-
-                        <Card>
-                            <img src={Alice} alt="" />
-                            <p>Senior Manager</p>
-                            <h1>Alice Waters</h1>
-
-                        </Card>
-
-                        <Card>
-                            <img src={Julia} alt="" />
-                            <p>Senior Worker</p>
-                            <h1>Julia Taylor</h1>
-
-                        </Card>
-
-
-
-                    </Cards2Ctn>
-
-                    <img src={Section} alt="" />
-
-                </CardsCtn>
-
-
-
+                        <SectionImage>
+                            <img src={Section} alt="Team section" />
+                        </SectionImage>
+                    </CardsCtn>
+                </ContentWrapper>
             </TeamCtn>
             <Footer />
-
         </>
     )
 }
