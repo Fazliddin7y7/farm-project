@@ -9,6 +9,7 @@ import Home2 from "../pages/home/Home2";
 import Home3 from "../pages/home/Home3";
 import About from "../pages/pages/AboutUs";
 import OurHistory from "../pages/pages/OurHistory";
+import Team from "../pages/pages/OurTeamMember";
 
 
 
@@ -23,6 +24,8 @@ const MainRoutes = () => {
      <Route path={ROUTES.HOME3} element={<Home3 />} />;
      <Route path={ROUTES.ABOUT} element={<About />} />;
      <Route path={ROUTES.HISTORY} element={<OurHistory />} />;
+     <Route path={ROUTES.TEAM} element={<Team />} />;
+
 
 
 

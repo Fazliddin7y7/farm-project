@@ -4,6 +4,7 @@ const ROUTES = {
     HOME3: "/home3",
     ABOUT: "/about",
     HISTORY: "/ourhistory",
+    TEAM: "/team",
 
    
 
