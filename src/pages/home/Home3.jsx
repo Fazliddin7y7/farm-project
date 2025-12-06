@@ -157,7 +157,7 @@ const LetsText = styled.h1`
 `;
 
 const BigTitle = styled.h1`
-  width: 420px;
+  width: 421px;
   font-family: "Signika", sans-serif;
   font-size: 52px;
   font-weight: 700;
