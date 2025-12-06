@@ -161,6 +161,9 @@ const Bottom = styled.div`
   }
 `;
 
+
+
+
 export default function Footer() {
   return (
     <FooterContainer>
